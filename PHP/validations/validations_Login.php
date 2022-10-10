@@ -3,21 +3,21 @@
     $email = strtolower($_POST['txtEmail']);
     $senha = $_POST['txtSenha'];
     $emailValido = strtolower("admin@gmail.com");
-    $senhaValida = 1234;
-    $valiado = false;
+    $senhaValida = "1234";
+    $autenticar = false;
 
     if($email == $emailValido){
         if($senha == $senhaValida){
-            $valiado = true;
+            $autenticar = true;
         }
     }
 
     session_start();
-    if($valiado){
+    if($autenticar){
         $_SESSION['txtEmail'] = $emailValido;
-        header("Location ../pages/home.php");
+        header("Location: ../view/home.php");
     }else{
         $_SESSION['txtEmail'] = null;
-        header("Location ../index.html");
+        header("Location: ../../index.html");
     }
 ?>

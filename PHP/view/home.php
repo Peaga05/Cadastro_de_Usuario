@@ -11,9 +11,18 @@
   <title>Home</title>
 </head>
 
+<?php
+  session_start();
+  $user = $_SESSION['txtEmail'];
+
+  if(is_null($user)){
+    header("Location: ../../index.html");
+  }
+?>
+
 <body>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="navbar-brand ps-2">Logo</div>
+    <div class="navbar-brand ps-2">Inventário de Usuário</div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
       <span class="navbar-toggler-icon"></span>
@@ -23,12 +32,12 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#home" data-toggle="tab">
             Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre" data-toggle="tab">
+        <li class="nav-item"><a class="nav-link" href="./forms/frm_Cad_Usuario.php" data-toggle="tab">
             Cadastrar</a></li>
         <li class="nav-item"><a class="nav-link" href="#contato" data-toggle="tab">
             Listar</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#contato" data-toggle="tab">
+        <li class="nav-item"><a class="nav-link" href="../validations/validations_Logoff.php" data-toggle="tab">
             Sair</a></li>
       </ul>
     </div>
@@ -46,7 +55,7 @@
             quis natus consequatur quas similique eos eaque tempora voluptate culpa dolorum officiis aliquid architecto
             inventore consectetur.
           </p>
-          <p class="card-text"><small class="text-muted"><a class="page-link" href="#">Acessar</a></small></p>
+          <p class="card-text"><small class="text-muted"><a class="page-link" href="./forms/frm_Cad_Usuario.php">Acessar</a></small></p>
         </div>
       </div>
       <div class="card p-1 me-2">
