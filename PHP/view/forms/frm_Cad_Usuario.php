@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../../assents/images/icon_user.png" type="image/png">
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="../../../style/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Cadastrar</title>
@@ -50,10 +50,50 @@
         </div>
     </nav>
 
+    <main>
+        <div class="global-container">
+            <div class="card login-form">
+
+                <div class="card-body">
+                    <h1 class="card-title text-center">CADASTRAR USUÁRIO</h1>
+                </div>
+
+                <div lass="card-text">
+                    <form action="">
+                        <div class="mb-1">
+                            <label for="txtNome" class="form-label">Nome</label>
+                            <input type="text" id="txtNome" name="txtNome" class="form-control">
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="txtEmail" class="form-label">Email</label>
+                            <input type="text" id="txtEmail" name="txtEmail" class="form-control">
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="txtSenha" class="form-label">Senha</label>
+                            <input type="text" id="txtSenha" name="txtSenha" class="form-control">
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="txtCPF" class="form-label">CPF</label>
+                            <input type="text" id="txtCPF" name="txtCPF" class="form-control">
+                        </div>
+
+                        <div class="d-grip gap-2">
+                           <input type="submit" class="btn btn-primary w-100" value="Cadastrar" name="btnCad">
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+    <script src="../../../script/main.js"></script>
 </body>
 
 </html>
