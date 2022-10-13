@@ -55,11 +55,12 @@
             <div class="card login-form">
 
                 <div class="card-body">
-                    <h1 class="card-title text-center">CADASTRAR USUÁRIO</h1>
+                    <h1 class="card-title text-center">CADASTRO</h1>
                 </div>
 
-                <div lass="card-text">
-                    <form action="">
+                <div class="card-text">
+                    <form action="../../controller/usuario_Controller.php" method="POST">
+
                         <div class="mb-1">
                             <label for="txtNome" class="form-label">Nome</label>
                             <input type="text" id="txtNome" name="txtNome" class="form-control">
@@ -72,7 +73,12 @@
 
                         <div class="mb-1">
                             <label for="txtSenha" class="form-label">Senha</label>
-                            <input type="text" id="txtSenha" name="txtSenha" class="form-control">
+                            <input type="password" id="txtSenha" name="txtSenha" class="form-control">
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="txtSenha" class="form-label">Confirmar senha</label>
+                            <input type="password" id="txtConfSenha" name="txtConfSenha" class="form-control">
                         </div>
 
                         <div class="mb-1">
