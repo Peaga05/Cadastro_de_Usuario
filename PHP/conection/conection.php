@@ -21,12 +21,6 @@ class Conexao
 
     public static function sql_Query($conexao, $sql)
     {
-        $operacao = mysqli_query($conexao, $sql);
-
-        if ($operacao) {
-           return true;
-        } else {
-            return false;
-        }
+        mysqli_query($conexao, $sql);
     }
 }

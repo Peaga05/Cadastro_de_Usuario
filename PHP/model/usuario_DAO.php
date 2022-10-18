@@ -12,7 +12,7 @@
             $pSenha = $usuario->getSenha();
             $pCpf = $usuario->getCpf();
 
-            $query = "INSERT INTO usuario(nome, email, senha, cpf) VALUES(
+            $query = "INSERT INTO usuario (nome, email, senha, cpf) VALUES(
                       '$pNome',
                       '$pEmail',
                       '$pSenha',
@@ -21,19 +21,13 @@
 
             $conexao = new Conexao();
             $conexao::Conectar();
+            $insert = $conexao::sql_Query($conexao, $query);
 
-            if($conexao::sql_Query($conexao, $query)){
-                echo "<div  class='alert alert-success alert-dismissible'>
-                      <button class='btn-close' data-dismiss='alert'></button>
-                      <strong>Usuário cadastrado com sucesso!</strong>
-                      </div>";
+            if($insert){
+                return true;
             }else{
-                echo "<div  class='alert alert-danger alert-dismissible'>
-                     <button class='btn-close' data-dismiss='alert'></button>
-                     <strong>Erro:</strong> Usuário não cadastrado!
-                     </div>";
+                return false;
             }
-
         }
     }
 
