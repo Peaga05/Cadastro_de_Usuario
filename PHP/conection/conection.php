@@ -1,5 +1,7 @@
 <?php
 
+use Conexao as GlobalConexao;
+
 class Conexao
 {
 
@@ -19,8 +21,10 @@ class Conexao
         }
     }
 
-    public static function sql_Query($conexao, $sql)
+    public static function sql_Query($sql)
     {
-        mysqli_query($conexao, $sql);
+        return mysqli_query(Conexao::Conectar(), $sql);
     }
 }
+
+?>

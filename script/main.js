@@ -1,4 +1,4 @@
-function getValue(){
-    var value = document.getElementById('btnCad').value;
-    return value;
-}
+$("#alert-temp").show();
+setTimeout(function () {
+  $("#alert-temp").hide();
+}, 3000)

@@ -13,12 +13,12 @@
 </head>
 
 <?php
-    session_start();
-    $user = $_SESSION['txtEmail'];
+session_start();
+$user = $_SESSION['txtEmail'];
 
-    if(is_null($user)){
-        header("Location: ../../../index.html");
-    }
+if (is_null($user)) {
+    header("Location: ../../../index.html");
+}
 ?>
 
 <body>
@@ -87,9 +87,8 @@
                         </div>
 
                         <div class="d-grip gap-2">
-                           <input type="submit" class="btn btn-primary w-100" value="Cadastrar" name="btnCad" id="btnCad">
+                            <input type="submit" class="btn btn-primary w-100" value="Cadastrar" name="btnCad" id="btnCad">
                         </div>
-                       
                     </form>
                 </div>
             </div>

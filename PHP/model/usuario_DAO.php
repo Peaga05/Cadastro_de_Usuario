@@ -21,7 +21,7 @@
 
             $conexao = new Conexao();
             $conexao::Conectar();
-            $insert = $conexao::sql_Query($conexao, $query);
+            $insert = $conexao::sql_Query($query);
 
             if($insert){
                 return true;
