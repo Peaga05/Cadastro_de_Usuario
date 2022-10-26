@@ -28,6 +28,29 @@
             }else{
                 return false;
             }
+
+        }
+
+        public static function buscar_usuario($busca, $item){
+            if($busca == "nome"){
+                $query = "SELECT * FROM usuario WHERE nome = " .$item . ";";
+
+            }else if($busca == "cpf"){
+                $query = "SELECT * FROM usuario WHERE cpf = " .$item . ";";
+
+            }else if($busca == "cpf"){
+                $query = "SELECT * FROM usuario WHERE email = " .$item . ";";
+            }
+
+            $conexao = new Conexao();
+            $conexao::Conectar();
+            $user = $conexao::sql_Query($query);
+
+                while($resp = $user->fetch_array()){
+                    
+                }
+
+            return $user;
         }
     }
 

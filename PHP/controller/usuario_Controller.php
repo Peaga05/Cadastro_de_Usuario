@@ -3,6 +3,7 @@
 require_once "../model/usuario_DAO.php";
 require_once "../classes/class_Usuario.php";
 require_once "../view/forms/frm_Cad_Usuario.php";
+require_once "../view/lista_usuario.php";
 
 class controller_Usuario
 {
@@ -27,13 +28,12 @@ class controller_Usuario
                return "vazio";
           }
 
-          if($cpf == ""){
+          if ($cpf == "") {
                return "vazio";
           }
 
           if ($senha != $confSenha) {
                return "senha";
-
           }
 
           $usuario = new Usuario();
@@ -50,6 +50,23 @@ class controller_Usuario
                return "erro";
           }
      }
+
+     public static function buscar_usuario()
+     {
+          $value = $_POST['radioCheck'];
+          $campoBusca = $_POST['txtBusca'];
+
+          if ($value == "nome") {
+               $buscar = usuario_DAO::buscar_usuario("nome", $campoBusca);
+
+          } else if ($value == "email") {
+               $buscar = usuario_DAO::buscar_usuario("email", $campoBusca);
+
+          } else if ($value == "cpf") {
+               $buscar = usuario_DAO::buscar_usuario("cpf", $campoBusca);
+
+          }
+
+          return $buscar;
+     }
 }
-
-

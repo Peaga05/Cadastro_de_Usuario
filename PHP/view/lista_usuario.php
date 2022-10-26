@@ -14,12 +14,12 @@
 
 <?php
 
-    session_start();
-    $user = $_SESSION['txtEmail'];
+session_start();
+$user = $_SESSION['txtEmail'];
 
-    if (is_null($user)) {
-        header("Location: ../../../index.html");
-    }
+if (is_null($user)) {
+    header("Location: ../../../index.html");
+}
 ?>
 
 <body>
@@ -55,34 +55,37 @@
         <div class="global-container">
             <div class="card login-form">
 
-                <h1 class="card-title text-center">LISTAR</h1>
+                <h1 class="card-title text-center">BUSCAR</h1>
 
 
                 <div class="card-text">
                     <form action="../intermediary/usuario_Intermediary.php" method="POST">
 
-                        <div class="mb-1">
-                            <label for="txtNome" class="form-label">Buscar</label>
+                        <div class="mb-1 mt-3">
                             <input type="text" id="txtBusca" name="txtBusca" class="form-control">
                         </div>
 
-                        <div class="form-check form-check-inline mb-1">
-                            <input class="form-check-input" type="radio" name="radioCheck" id="chkNome" value="nome">
-                            <label class="form-check-label" for="chkNome">Nome</label>
-                        </div>
+                        <div class="m-auto text-center">
 
-                        <div class="form-check form-check-inline mb-1">
-                            <input class="form-check-input" type="radio" name="radioCheck" id="chkEmail" value="email">
-                            <label class="form-check-label" for="chkEmail">Email</label>
-                        </div>
+                            <div class="form-check form-check-inline mb-1">
+                                <input class="form-check-input" type="radio" name="radioCheck" id="chkNome" value="nome">
+                                <label class="form-check-label" for="chkNome">Nome</label>
+                            </div>
 
-                        <div class="form-check form-check-inline mb-1">
-                            <input class="form-check-input" type="radio" name="radioCheck" id="chkCpf" value="cpf">
-                            <label class="form-check-label" for="chkCpf">CPF</label>
+                            <div class="form-check form-check-inline mb-1">
+                                <input class="form-check-input" type="radio" name="radioCheck" id="chkEmail" value="email">
+                                <label class="form-check-label" for="chkEmail">Email</label>
+                            </div>
+
+                            <div class="form-check form-check-inline mb-1">
+                                <input class="form-check-input" type="radio" name="radioCheck" id="chkCpf" value="cpf">
+                                <label class="form-check-label" for="chkCpf">CPF</label>
+                            </div>
+
                         </div>
 
                         <div class="d-grip gap-2 mb-5">
-                            <input type="submit" class="btn btn-primary w-100" value="buscar" name="btnBuscar" id="btnBuscar">
+                            <input type="submit" class="btn btn-primary w-100" value="Buscar" name="btnBuscar" id="btnBuscar">
                         </div>
                     </form>
                 </div>

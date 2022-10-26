@@ -34,6 +34,4 @@ if ($value == "Cadastrar") {
                   </div>";
     }
     
-}else if($value == "buscar"){
-    echo "<h1> Deu certo </h1>";
 }
