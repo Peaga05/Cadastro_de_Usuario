@@ -16,23 +16,24 @@ class controller_Usuario
           $cpf = $_POST['txtCPF'];
 
           if ($nome == "") {
-               return false;
+               return "vazio";
           }
 
           if ($email == "") {
-               return false;
+               return "vazio";
           }
 
           if ($senha == "" || $confSenha == "") {
-               return false;
+               return "vazio";
           }
 
           if($cpf == ""){
-               return false;
+               return "vazio";
           }
 
           if ($senha != $confSenha) {
-               return false;
+               return "senha";
+
           }
 
           $usuario = new Usuario();
@@ -44,9 +45,11 @@ class controller_Usuario
           $insert = usuario_DAO::cadastrar_Usuario($usuario);
 
           if ($insert) {
-               return true;
+               return "sucesso";
           } else {
-               return false;
+               return "erro";
           }
      }
 }
+
+
