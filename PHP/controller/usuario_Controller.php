@@ -2,45 +2,37 @@
 
 require_once "../model/usuario_DAO.php";
 require_once "../classes/class_Usuario.php";
-require_once "../view/forms/frm_Cad_Usuario.php";
-require_once "../view/lista_usuario.php";
 
 class controller_Usuario
 {
 
-     public static function adicionar_Usuario()
+     public static function adicionar_Usuario($pNome, $pEmail, $pSenha, $pConfSenha, $pCpf)
      {
-          $nome = $_POST['txtNome'];
-          $email = $_POST['txtEmail'];
-          $senha = $_POST['txtSenha'];
-          $confSenha = $_POST['txtConfSenha'];
-          $cpf = $_POST['txtCPF'];
-
-          if ($nome == "") {
+          if ($pNome == "") {
                return "vazio";
           }
 
-          if ($email == "") {
+          if ($pEmail == "") {
                return "vazio";
           }
 
-          if ($senha == "" || $confSenha == "") {
+          if ($pSenha == "" || $pConfSenha == "") {
                return "vazio";
           }
 
-          if ($cpf == "") {
+          if ($pCpf == "") {
                return "vazio";
           }
 
-          if ($senha != $confSenha) {
+          if ($pSenha != $pConfSenha) {
                return "senha";
           }
 
           $usuario = new Usuario();
-          $usuario->setNome($nome);
-          $usuario->setEmail($email);
-          $usuario->setSenha($senha);
-          $usuario->setCpf($cpf);
+          $usuario->setNome($pNome);
+          $usuario->setEmail($pEmail);
+          $usuario->setSenha($pSenha);
+          $usuario->setCpf($pCpf);
 
           $insert = usuario_DAO::cadastrar_Usuario($usuario);
 
@@ -51,11 +43,8 @@ class controller_Usuario
           }
      }
 
-     public static function buscar_usuario()
+     public static function buscar_usuario($value, $campoBusca)
      {
-          $value = $_POST['radioCheck'];
-          $campoBusca = $_POST['txtBusca'];
-
           if ($value == "nome") {
                $buscar = usuario_DAO::buscar_usuario("nome", $campoBusca);
 
@@ -67,6 +56,20 @@ class controller_Usuario
 
           }
 
-          return $buscar;
+          if(!is_null($buscar)){
+               $list = array();
+               foreach ($buscar as $user) {
+                    $usuario = new Usuario();
+                    $usuario->setNome($user['nome']);
+                    $usuario->setEmail($user['email']);
+                    $usuario->setCpf($user['cpf']);
+                    array_push($list, $usuario);
+                }
+             
+               return $list;
+          }else{
+               return null;
+          }
+          
      }
 }

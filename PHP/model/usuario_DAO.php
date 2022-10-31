@@ -33,24 +33,25 @@
 
         public static function buscar_usuario($busca, $item){
             if($busca == "nome"){
-                $query = "SELECT * FROM usuario WHERE nome = " .$item . ";";
-
+                $query = "SELECT * FROM usuario WHERE nome LIKE '%" . $item . "%';";
+            }else if($busca == "email"){
+                $query = "SELECT * FROM usuario WHERE email = '" . $item . "';";
             }else if($busca == "cpf"){
-                $query = "SELECT * FROM usuario WHERE cpf = " .$item . ";";
-
-            }else if($busca == "cpf"){
-                $query = "SELECT * FROM usuario WHERE email = " .$item . ";";
-            }
+                $query = "SELECT * FROM usuario WHERE cpf = '" . $item . "';";
+            }      
 
             $conexao = new Conexao();
             $conexao::Conectar();
             $user = $conexao::sql_Query($query);
 
-                while($resp = $user->fetch_array()){
-                    
-                }
-
-            return $user;
+            $list = array();
+            while($dado = mysqli_fetch_array($user, MYSQLI_ASSOC)){
+                array_push($list, $dado);
+            }
+            // $user = $conexao::sql_Query($query);
+            // $resp = mysqli_fetch_array($list);
+               
+            return $list;
         }
     }
 

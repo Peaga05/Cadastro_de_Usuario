@@ -14,12 +14,15 @@
 
 <?php
 
-session_start();
-$user = $_SESSION['txtEmail'];
+    session_status() == PHP_SESSION_ACTIVE;
 
-if (is_null($user)) {
-    header("Location: ../../../index.html");
-}
+    // session_start();
+    // $user = $_SESSION['txtEmail'];
+
+    // if (is_null($user)) {
+    //     header("Location: ../../../index.html");
+    // }
+
 ?>
 
 <body>
@@ -59,7 +62,7 @@ if (is_null($user)) {
 
 
                 <div class="card-text">
-                    <form action="../intermediary/usuario_Intermediary.php" method="POST">
+                    <form action="../action/action_Listar_Usuario.php" method="POST">
 
                         <div class="mb-1 mt-3">
                             <input type="text" id="txtBusca" name="txtBusca" class="form-control">
