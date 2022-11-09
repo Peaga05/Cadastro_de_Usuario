@@ -9,21 +9,22 @@ class Conexao
     protected static $senha = "12332118";
     protected static $banco = "projetophp";
     protected static $endereco = "localhost";
+    static $bd;
 
     public static function Conectar()
     {
-        $conexao = new mysqli(self::$endereco, self::$usuario, self::$senha, self::$banco);
+        $bd = new mysqli(self::$endereco, self::$usuario, self::$senha, self::$banco);
 
         if (mysqli_connect_error()) {
             echo "Erro na conexão: " . mysqli_connect_error();
-        } else {
-            return $conexao;
+        }else{
+            return $bd;
         }
     }
 
-    public static function sql_Query($sql)
+    public static function sql_Query($bd, $sql)
     {
-        return mysqli_query(Conexao::Conectar(), $sql);
+        return mysqli_query($bd, $sql);
     }
 }
 

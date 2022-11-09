@@ -19,9 +19,8 @@
                       '$pCpf'
                     );";
 
-            $conexao = new Conexao();
-            $conexao::Conectar();
-            $insert = $conexao::sql_Query($query);
+            $bd = Conexao::Conectar();
+            $insert = Conexao::sql_Query($bd, $query);
 
             if($insert){
                 return true;
@@ -40,9 +39,8 @@
                 $query = "SELECT * FROM usuario WHERE cpf = '" . $item . "';";
             }      
 
-            $conexao = new Conexao();
-            $conexao::Conectar();
-            $user = $conexao::sql_Query($query);
+            $bd = Conexao::Conectar();;
+            $user = Conexao::sql_Query($bd, $query);
 
             $list = array();
             while($dado = mysqli_fetch_array($user, MYSQLI_ASSOC)){
