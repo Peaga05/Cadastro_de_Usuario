@@ -9,10 +9,10 @@ class Conexao
     protected static $senha = "12332118";
     protected static $banco = "projetophp";
     protected static $endereco = "localhost";
-    static $bd;
 
     public static function Conectar()
     {
+
         $bd = new mysqli(self::$endereco, self::$usuario, self::$senha, self::$banco);
 
         if (mysqli_connect_error()) {
@@ -22,9 +22,13 @@ class Conexao
         }
     }
 
-    public static function sql_Query($bd, $sql)
+    public static function sql_Query($sql)
     {
-        return mysqli_query($bd, $sql);
+        $bd = Conexao::Conectar();
+        $result =  mysqli_query($bd, $sql);
+        mysqli_close($bd);
+        return $result;
+
     }
 }
 

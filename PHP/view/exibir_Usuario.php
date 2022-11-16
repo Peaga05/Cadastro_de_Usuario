@@ -78,16 +78,22 @@
                 echo '</tbody>';
                 echo '</table>';
             } else {
-                echo "<div id='alert' class='alert alert-danger alert-dismissible w-25 justify-content-start'>
-                                     <button class='btn-close' data-dismiss='alert'></button>
-                                     <strong>Erro: </strong>Usuário não está cadastrado ou campos não preenchidos!
-                              </div>";
+                echo '<div class="container text-center mt-5 w-25 h-50">
+                    <div class="card-group">
+                        <div class="card p-1 me-2 bg-dark">
+                             
+                            <div class="card-body">
+                            <h5 class="card-title text-light">Erro na operação</h5>
+                            <p class="card-text text-light">
+                                <strong>Erro: </strong>Usuário não está cadastrado ou campos não preenchidos!
+                            </p>
+                            <p class="card-text"><small class="text-muted"><a class="page-link bg-secondary text-dark" href="./busca_Usuario.php">Voltar</a></small></p>
+                            </div>
+                        </div>
+                    </div>';
             }
 
         ?>
-        
-           
-       
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

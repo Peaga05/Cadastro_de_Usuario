@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="card-text">
-                    <form action="../../action/action_Cadastrar_Usuario.php" method="POST">
+                    <form action="../user_Cadastrado.php" method="POST">
 
                         <div class="mb-1">
                             <label for="txtNome" class="form-label">Nome</label>
